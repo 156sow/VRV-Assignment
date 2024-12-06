@@ -9,6 +9,63 @@ A powerful tool for analyzing web server logs to track traffic patterns, detect 
 - **Suspicious Activity Detection**: Detect potential brute force attacks based on failed login attempts.
 - **Interactive Visualizations**: Explore data using rich and intuitive Streamlit-powered dashboards.
 - **CSV Report Generation**: Summarize analysis in downloadable CSV files.
+Here’s an explanation of the project structure and directories for your **Web Server Log Analyzer**:
+
+---
+
+## Project Structure
+
+```
+web-server-log-analyzer/
+├── log_analyzer.py          # Standalone python script that automates log files analysis.
+├── Web_App
+|  ├── app.py                # Main Streamlit application file
+|  ├── utils/                # Utility modules for log analysis and visualization
+|  │   ├── log_analyzer.py   # Functions for log validation, parsing, and analysis
+|  │   ├── visualizations.py # Functions for generating visualizations
+|  │
+|   ├── temp/                 # Temporary directory for uploaded log files
+│
+├── requirements.txt      # List of required Python packages
+├── 
+└── LICENSE               # License file (if applicable)
+```
+
+### **Explanation of Directories and Files**
+#### 1. **`logfile_analyzer.py`**
+    - This script processes log data and generates insights in a CSV format for large-scale or batch analysis.
+
+#### 2. **`app.py`**
+   - This is the main entry point of the application.
+   - It provides the Streamlit-based user interface for uploading log files and viewing analysis results.
+   - Handles user interactions such as selecting visualizations and downloading CSV reports.
+
+#### 3. **`utils/`**
+   - A directory containing reusable utility scripts for modularity and better code organization.
+   - **`log_analyzer.py`**: Includes core logic for:
+     - Validating log file format.
+     - Parsing logs into a structured DataFrame.
+     - Analyzing requests per IP, detecting suspicious activity, and identifying the most accessed endpoints.
+   - **`visualizations.py`**: Contains all visualization-related functions, such as:
+     - Generating line plots for traffic over time.
+     - Bar charts for status code distributions.
+     - Heatmaps for failed login attempts.
+     - Bar charts for endpoint access.
+
+#### 4. **`temp/`**
+   - A directory created dynamically to store uploaded files temporarily.
+   - Files in this directory are used for processing during the app's runtime and can be safely deleted after the session ends.
+
+#### 5. **`requirements.txt`**
+   - Specifies all the Python libraries and dependencies required to run the application.
+   - Install dependencies using:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+---
+
+
 
 ## Requirements
 
@@ -40,23 +97,13 @@ pip install -r requirements.txt
 4. Explore traffic patterns, detect anomalies, and generate reports.
 
 ## File Structure
-
+-
 - `app.py`: Main application file.
 - `utils/`: Contains helper modules for log validation, parsing, analysis, and visualization.
 - `temp/`: Temporary storage for uploaded files.
 - `requirements.txt`: List of dependencies.
 - `README.md`: Documentation file.
 
-## Visualizations
-
-- **Requests Over Time**: Understand traffic trends with time-series visualizations.
-  ![image](https://github.com/user-attachments/assets/5b619efb-9dde-4ba6-95ae-ee79359c6078)
-- **HTTP Status Code Distribution**: View the frequency of different status codes.
-  ![image](https://github.com/user-attachments/assets/c8547010-cad4-48bd-a11a-15c13649cdd1)
-- **Endpoint Access**: Discover the most frequently accessed endpoints.
-  ![image](https://github.com/user-attachments/assets/89dc86d8-c179-454f-be57-17fc4c29c945)
-- **Failed Login Heatmap**: Identify patterns in failed login attempts.
-  ![image](https://github.com/user-attachments/assets/d36c94d2-2658-4ef3-b04a-be7d4f44e8ab)
 
 ## Example
 
@@ -96,4 +143,17 @@ Endpoint: /login (Accessed 13 times)
    IP Address      Failed Login Count
   203.0.113.5             15
 ```
+
+
+## Visualizations
+
+- **Requests Over Time**: Understand traffic trends with time-series visualizations.
+  ![image](https://github.com/user-attachments/assets/5b619efb-9dde-4ba6-95ae-ee79359c6078)
+- **HTTP Status Code Distribution**: View the frequency of different status codes.
+  ![image](https://github.com/user-attachments/assets/c8547010-cad4-48bd-a11a-15c13649cdd1)
+- **Endpoint Access**: Discover the most frequently accessed endpoints.
+  ![image](https://github.com/user-attachments/assets/89dc86d8-c179-454f-be57-17fc4c29c945)
+- **Failed Login Heatmap**: Identify patterns in failed login attempts.
+  ![image](https://github.com/user-attachments/assets/d36c94d2-2658-4ef3-b04a-be7d4f44e8ab)
+
 
