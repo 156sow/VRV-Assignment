@@ -64,23 +64,6 @@ web-server-log-analyzer/
 
 ---
 
-
-
-## Requirements
-
-- Python 3.8 or later
-- Required Python packages:
-  - `pandas`
-  - `matplotlib`
-  - `seaborn`
-  - `streamlit`
-
-Install dependencies using pip:
-
-```bash
-pip install -r requirements.txt
-```
-
 ## How to Use
 
 1. Clone this repository:
@@ -95,16 +78,8 @@ pip install -r requirements.txt
 3. Upload your log file (in `.log` format) via the provided interface.
 4. Explore traffic patterns, detect anomalies, and generate reports.
 
-## File Structure
--
-- `app.py`: Main application file.
-- `utils/`: Contains helper modules for log validation, parsing, analysis, and visualization.
-- `temp/`: Temporary storage for uploaded files.
-- `requirements.txt`: List of dependencies.
-- `README.md`: Documentation file.
 
-
-## Example
+## Example Input for the log_analyzer.py
 
 Here is an example of the log file format that the tools in this repository expect:
 
