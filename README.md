@@ -24,7 +24,7 @@ web-server-log-analyzer/
 |  │   ├── log_analyzer.py   # Functions for log validation, parsing, and analysis
 |  │   ├── visualizations.py # Functions for generating visualizations
 |  │
-|   ├── temp/                 # Temporary directory for uploaded log files
+|  ├── temp/                 # Temporary directory for uploaded log files
 │
 ├── requirements.txt      # List of required Python packages
 ├── 
@@ -32,9 +32,8 @@ web-server-log-analyzer/
 ```
 
 ### **Explanation of Directories and Files**
-#### 1. **`logfile_analyzer.py`**
-    - This script processes log data and generates insights in a CSV format for large-scale or batch analysis.
-
+#### 1. **`log_analyzer.py`**
+   - This script processes log data and generates insights in a CSV format for large-scale or batch analysis.
 #### 2. **`app.py`**
    - This is the main entry point of the application.
    - It provides the Streamlit-based user interface for uploading log files and viewing analysis results.
