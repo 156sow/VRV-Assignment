@@ -50,22 +50,50 @@ pip install -r requirements.txt
 ## Visualizations
 
 - **Requests Over Time**: Understand traffic trends with time-series visualizations.
+  ![image](https://github.com/user-attachments/assets/5b619efb-9dde-4ba6-95ae-ee79359c6078)
 - **HTTP Status Code Distribution**: View the frequency of different status codes.
+  ![image](https://github.com/user-attachments/assets/c8547010-cad4-48bd-a11a-15c13649cdd1)
 - **Endpoint Access**: Discover the most frequently accessed endpoints.
+  ![image](https://github.com/user-attachments/assets/89dc86d8-c179-454f-be57-17fc4c29c945)
 - **Failed Login Heatmap**: Identify patterns in failed login attempts.
+  ![image](https://github.com/user-attachments/assets/d36c94d2-2658-4ef3-b04a-be7d4f44e8ab)
 
 ## Example
 
-![Visualization Example](path/to/screenshot.png)
+Here is an example of the log file format that the tools in this repository expect:
 
-## Contributing
+```bash
+192.168.1.1 - - [03/Dec/2024:10:12:34 +0000] "GET /home HTTP/1.1" 200 512
+203.0.113.5 - - [03/Dec/2024:10:12:35 +0000] "POST /login HTTP/1.1" 401 128 "Invalid credentials"
+10.0.0.2 - - [03/Dec/2024:10:12:36 +0000] "GET /about HTTP/1.1" 200 256
+192.168.1.1 - - [03/Dec/2024:10:12:37 +0000] "GET /contact HTTP/1.1" 200 312
+198.51.100.23 - - [03/Dec/2024:10:12:38 +0000] "POST /register HTTP/1.1" 200 128
+203.0.113.5 - - [03/Dec/2024:10:12:39 +0000] "POST /login HTTP/1.1" 401 128 "Invalid credentials"
+192.168.1.100 - - [03/Dec/2024:10:12:40 +0000] "POST /login HTTP/1.1" 401 128 "Invalid credentials"
+10.0.0.2 - - [03/Dec/2024:10:12:41 +0000] "GET /dashboard HTTP/1.1" 200 1024
+198.51.100.23 - - [03/Dec/2024:10:12:42 +0000] "GET /about HTTP/1.1" 200 256
+192.168.1.1 - - [03/Dec/2024:10:12:43 +0000] "GET /dashboard HTTP/1.1" 200 1024
+```
 
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
+### Output for the **log_analyzer.py**
 
-## License
+#### Request per IP Address
+```bash
+   IP Address      Request Count
+  203.0.113.5             15
+  198.51.100.23           8
+  192.168.1.1             7
+  10.0.0.2                6
+  192.168.1.100           5
+```
+#### Most Frequently Accessed Endpoint
+```bash
+Endpoint: /login (Accessed 13 times)
+```
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+#### Suspicious Activity Detected (Failed Login Attempts)
+```bash
+   IP Address      Failed Login Count
+  203.0.113.5             15
+```
 
----
-
-Let me know if you'd like me to include specific information from the uploaded file or adjust the details!
