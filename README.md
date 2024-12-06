@@ -30,7 +30,7 @@ pip install -r requirements.txt
 1. Clone this repository:
    ```bash
    git clone https://github.com/156sow/VRV-Assignment.git
-   cd web-server-log-analyzer
+   cd Web_App
    ```
 2. Run the Streamlit app:
    ```bash
